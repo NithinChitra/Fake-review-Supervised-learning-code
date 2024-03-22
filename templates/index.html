@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Review Detector</title>
+</head>
+<body>
+    <h1>Fake Review Detector</h1>
+    <form action="/predict" method="post">
+        <label for="text_input">Enter a review:</label>
+        <textarea id="text_input" name="text_input" rows="4" cols="50" required></textarea><br>
+        <input type="submit" value="Predict">
+    </form>
+    {% if result %}
+        <h2>Result:</h2>
+        <p>The input review is {{ result }}.</p>
+        <p>You entered: "{{ text_input }}"</p>
+    {% endif %}
+</body>
+</html>
